@@ -1,14 +1,13 @@
+import kzLogo from '../assets/brand/kz-logo.png'
 import './Logo.css'
 
 function Logo({ size = 'md' }) {
   return (
-    <div className={`logo logo--${size}`}>
-      <span className="logo__mark">KZ</span>
-      <span className="logo__word">
-        AUTOS
-        <span className="logo__suffix">LTD</span>
-      </span>
-    </div>
+    <img
+      src={kzLogo}
+      alt="KZ Autos Ltd"
+      className={`logo logo--${size}`}
+    />
   )
 }
 
