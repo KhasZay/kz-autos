@@ -1,0 +1,51 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-heading);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logo__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.28em 0.36em;
+}
+
+.logo__word {
+  color: var(--color-text);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+}
+
+.logo__suffix {
+  color: var(--color-accent);
+  font-size: 0.5em;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.logo--md {
+  font-size: 1.5rem;
+}
+
+.logo--md .logo__mark {
+  font-size: 1em;
+}
+
+.logo--lg {
+  font-size: 2.5rem;
+}
+
+.logo--sm {
+  font-size: 1.1rem;
+}
