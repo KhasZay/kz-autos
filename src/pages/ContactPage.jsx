@@ -3,9 +3,9 @@ import PageHero from '../components/PageHero.jsx'
 import './ContactPage.css'
 
 const CONTACT_DETAILS = [
-  { label: 'Address', value: 'Add your dealership address here' },
-  { label: 'Phone', value: 'Add your phone number here' },
-  { label: 'Email', value: 'Add your email address here' },
+  { label: 'Address', value: 'Area 8 Garden, Garki, Abuja, Nigeria' },
+  { label: 'Phone', value: '+234 803 371 0193' },
+  { label: 'Email', value: 'khazautosltd@gmail.com' },
   { label: 'Hours', value: 'Mon – Sat, 9am – 6pm' },
 ]
 
