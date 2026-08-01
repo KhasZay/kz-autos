@@ -9,12 +9,26 @@ const CONTACT_DETAILS = [
   { label: 'Hours', value: 'Mon – Sat, 9am – 6pm' },
 ]
 
-function ContactPage() {
-  const [submitted, setSubmitted] = useState(false)
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mlgqyord'
 
-  function handleSubmit(event) {
+function ContactPage() {
+  const [status, setStatus] = useState('idle')
+
+  async function handleSubmit(event) {
     event.preventDefault()
-    setSubmitted(true)
+    setStatus('sending')
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(event.target),
+      })
+
+      setStatus(response.ok ? 'success' : 'error')
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -35,7 +49,7 @@ function ContactPage() {
           ))}
         </dl>
 
-        {submitted ? (
+        {status === 'success' ? (
           <p className="contact-form__success">
             Thanks for reaching out — we'll get back to you shortly.
           </p>
@@ -57,9 +71,14 @@ function ContactPage() {
               Message
               <textarea name="message" rows="4" required />
             </label>
-            <button className="btn btn--accent" type="submit">
-              Send Message
+            <button className="btn btn--accent" type="submit" disabled={status === 'sending'}>
+              {status === 'sending' ? 'Sending…' : 'Send Message'}
             </button>
+            {status === 'error' && (
+              <p className="contact-form__error">
+                Something went wrong sending your message. Please try again or call us directly.
+              </p>
+            )}
           </form>
         )}
       </div>

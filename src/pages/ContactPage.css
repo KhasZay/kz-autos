@@ -70,6 +70,17 @@
   font-size: 1.05rem;
 }
 
+.contact-form__error {
+  color: #e05a5a;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
   .contact-layout {
     grid-template-columns: 1fr;
