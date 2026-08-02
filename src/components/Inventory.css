@@ -45,6 +45,11 @@
   color: var(--color-accent-text);
 }
 
+.inventory__status {
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
 .inventory__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

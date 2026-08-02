@@ -4,10 +4,10 @@ function VehicleCard({ vehicle }) {
   return (
     <div className="vehicle-card">
       <div className="vehicle-card__media">
-        {vehicle.image ? (
+        {vehicle.image_url ? (
           <img
             className="vehicle-card__photo"
-            src={vehicle.image}
+            src={vehicle.image_url}
             alt={`${vehicle.year} ${vehicle.make} ${vehicle.model}`}
           />
         ) : (

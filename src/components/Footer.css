@@ -32,3 +32,48 @@
 .footer__links a:hover {
   color: var(--color-accent);
 }
+
+.footer__link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer__link-button:hover {
+  color: var(--color-accent);
+}
+
+.footer__social {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.social-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-surface-alt);
+}
+
+.social-link__icon {
+  width: 18px;
+  height: 18px;
+}

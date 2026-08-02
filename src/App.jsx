@@ -11,7 +11,18 @@ import ServicesPage from './pages/ServicesPage.jsx'
 import FleetSalesPage from './pages/FleetSalesPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import BlogPage from './pages/BlogPage.jsx'
+import BlogPostPage from './pages/BlogPostPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx'
+import { AdminAuthProvider } from './admin/context/AdminAuthContext.jsx'
+import RequireAuth from './admin/components/RequireAuth.jsx'
+import AdminLayout from './admin/components/AdminLayout.jsx'
+import AdminLoginPage from './admin/pages/AdminLoginPage.jsx'
+import AdminDashboardPage from './admin/pages/AdminDashboardPage.jsx'
+import AdminVehiclesPage from './admin/pages/AdminVehiclesPage.jsx'
+import AdminVehicleFormPage from './admin/pages/AdminVehicleFormPage.jsx'
+import AdminBlogPage from './admin/pages/AdminBlogPage.jsx'
+import AdminBlogFormPage from './admin/pages/AdminBlogFormPage.jsx'
 
 function App() {
   return (
@@ -28,7 +39,24 @@ function App() {
         <Route path="fleet-sales" element={<FleetSalesPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="blog" element={<BlogPage />} />
+        <Route path="blog/:slug" element={<BlogPostPage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+      </Route>
+
+      <Route path="admin" element={<AdminAuthProvider />}>
+        <Route path="login" element={<AdminLoginPage />} />
+        <Route element={<RequireAuth />}>
+          <Route element={<AdminLayout />}>
+            <Route index element={<AdminDashboardPage />} />
+            <Route path="vehicles" element={<AdminVehiclesPage />} />
+            <Route path="vehicles/new" element={<AdminVehicleFormPage />} />
+            <Route path="vehicles/:id" element={<AdminVehicleFormPage />} />
+            <Route path="blog" element={<AdminBlogPage />} />
+            <Route path="blog/new" element={<AdminBlogFormPage />} />
+            <Route path="blog/:id" element={<AdminBlogFormPage />} />
+          </Route>
+        </Route>
       </Route>
     </Routes>
   )

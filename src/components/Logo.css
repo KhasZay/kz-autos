@@ -2,6 +2,7 @@
   display: inline-block;
   width: auto;
   object-fit: contain;
+  filter: contrast(1.15) saturate(1.25) drop-shadow(0 2px 8px rgba(212, 160, 23, 0.45));
 }
 
 .logo--sm {
@@ -9,7 +10,7 @@
 }
 
 .logo--md {
-  height: 60px;
+  height: 88px;
 }
 
 .logo--lg {

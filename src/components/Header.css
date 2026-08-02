@@ -10,6 +10,12 @@
 .site-header__logo {
   text-decoration: none;
   margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 10px;
+  background: var(--color-surface-alt);
+  box-shadow: 0 0 0 2px var(--color-accent), 0 0 20px rgba(212, 160, 23, 0.3);
 }
 
 .nav {

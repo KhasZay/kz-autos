@@ -55,6 +55,14 @@ function ContactPage() {
           </p>
         ) : (
           <form className="contact-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="_gotcha"
+              className="contact-form__honeypot"
+              tabIndex="-1"
+              autoComplete="off"
+              aria-hidden="true"
+            />
             <label>
               Name
               <input type="text" name="name" required />
